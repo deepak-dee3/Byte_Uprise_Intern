@@ -197,221 +197,599 @@ class _MainPageState extends State<MainPage> {
                 ),
               ),
               SizedBox(height: screenheight * 0.03),
-              Padding(
-                padding: EdgeInsets.all(10),
-                child: Container(
-                  
-                  height: screenheight * 0.18,
-                  margin: EdgeInsets.symmetric(horizontal: 10),
-                  child: ListView.builder(
-                    controller: _scrollController,
-                    scrollDirection: Axis.horizontal,
-                    itemCount: 5,
-                    itemBuilder: (context, index) {
-                      return Padding(
-                        padding: EdgeInsets.only(right: 16),
-                        child: Container(
-                          width: screenwidth * 0.7,
-                          decoration: BoxDecoration(
-        
-                            gradient: LinearGradient(
-                              colors: [Colors.blueAccent, Colors.purple],
-                              begin: Alignment.topLeft,
-                              end: Alignment.bottomRight,
-                            ),
-                            borderRadius: BorderRadius.circular(20),
-                            
-                          ),
-                          child: Center(
-                            child: Text(
-                              'Item $index',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                        ),
-                      );
-                    },
-                  ),
-                ),
-              ),
-              // Dots Indicator
-              Padding(
-                padding: const EdgeInsets.only(top: 16.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: List.generate(5, (index) {
-                    return AnimatedContainer(
-                      duration: Duration(milliseconds: 300),
-                      margin: EdgeInsets.symmetric(horizontal: 4),
-                      height: 8,
-                      width: 8,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: _currentIndex == index
-                            ? Colors.purple
-                            : Colors.grey,
-                      ),
-                    );
-                  }),
-                ),
-              ),
+// Padding(
+//   padding: EdgeInsets.all(10),
+//   child: Container(
+//     height: screenheight * 0.25,
+//     margin: EdgeInsets.symmetric(horizontal: 10),
+//     child: ListView.builder(
+//       controller: _scrollController,
+//       scrollDirection: Axis.horizontal,
+//       itemCount: 5,
+//       itemBuilder: (context, index) {
+//         return Padding(
+//           padding: EdgeInsets.only(right: 16),
+//           child: Container(
+//             width: screenwidth * 0.7,
+//             decoration: BoxDecoration(
+//               gradient: LinearGradient(
+//                 colors: [Colors.blueAccent, Colors.purple],
+//                 begin: Alignment.topLeft,
+//                 end: Alignment.bottomRight,
+//               ),
+//               borderRadius: BorderRadius.circular(20),
+//             ),
+//             child: Padding(
+//               padding: EdgeInsets.all(10),
+//               child: GridView(
+//                 physics: NeverScrollableScrollPhysics(),
+//                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+//                   crossAxisCount: 2,
+//                   mainAxisSpacing: 8,
+//                   crossAxisSpacing: 8,
+//                 ),
+//                 children: [
+//                   ClipRRect(
+//                     borderRadius: BorderRadius.circular(10),
+//                     child: Image.asset(
+//                       'assets/sw1.jpeg', // First image
+//                       fit: BoxFit.cover,
+//                     ),
+//                   ),
+//                   ClipRRect(
+//                     borderRadius: BorderRadius.circular(10),
+//                     child: Image.asset(
+//                       'assets/sw2.jpeg', // Second image
+//                       fit: BoxFit.cover,
+//                     ),
+//                   ),
+//                   ClipRRect(
+//                     borderRadius: BorderRadius.circular(10),
+//                     child: Image.asset(
+//                       'assets/sw3.jpeg', // Third image
+//                       fit: BoxFit.cover,
+//                     ),
+//                   ),
+//                   ClipRRect(
+//                     borderRadius: BorderRadius.circular(10),
+//                     child: Image.asset(
+//                       'assets/sw4.jpeg', // Fourth image
+//                       fit: BoxFit.cover,
+//                     ),
+//                   ),
+//                 ],
+//               ),
+//             ),
+//           ),
+//         );
+//       },
+//     ),
+//   ),
+// ),
+Container(
+  height: screenheight * 0.18,
+  margin: EdgeInsets.symmetric(horizontal: 10),
+  child: ListView.builder(
+    controller: _scrollController,
+    scrollDirection: Axis.horizontal,
+    itemCount: 4, // Number of images
+    itemBuilder: (context, index) {
+      // Updated image paths
+      List<String> imagePaths = [
+        'assets/bb.jpeg',
+        'assets/sw2.jpeg',
+        'assets/sw3.jpeg',
+        'assets/sw4.jpeg'
+      ];
+
+      return Padding(
+        padding: EdgeInsets.only(right: 16),
+        child: Container(
+          width: screenwidth * 0.8,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20),
+          ),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(20),
+            child: Image.asset(
+              imagePaths[index],
+              fit: BoxFit.cover,
+            ),
+          ),
+        ),
+      );
+    },
+  ),
+),
+
+
         
               SizedBox(height: screenheight*0.03,),
         
-              Padding(padding: EdgeInsets.only(left: 20),
-                child: Align(alignment: Alignment.centerLeft,
-                  child: Text('Courses',style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),)),
-              ),
-               SizedBox(height: screenheight*0.03,),
-        
-        Padding(padding: EdgeInsets.only(left: 20),
+Padding(
+  padding: EdgeInsets.only(left: 20),
+  child: Align(
+    alignment: Alignment.centerLeft,
+    child: Text(
+      'Courses',
+      style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+    ),
+  ),
+),
+SizedBox(height: screenheight * 0.03),
+Padding(
+  padding: EdgeInsets.only(left: 20),
+  child: Container(
+    height: screenheight * 0.33,
+    child: ListView(
+      scrollDirection: Axis.horizontal,
+      children: [
+        GestureDetector(
+          onTap: () {
+            // Interaction for the first course card
+            print("Tapped on Animations in SwiftUI");
+          },
           child: Container(
-                  height: screenheight * 0.33,
-                  child: ListView(
-                    scrollDirection: Axis.horizontal,
-                    children: [
-                      Container(
-                        width: screenwidth * 0.65,
-                        //margin: EdgeInsets.on(horizontal: 20),
-                        decoration: BoxDecoration(
-                          color: Colors.blue,
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        child: Center(
-                          child: Text(
-                            'Course 1',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                      ),
-                      Container(
-                        width: screenwidth * 0.6,
-                        margin: EdgeInsets.symmetric(horizontal: 8),
-                        decoration: BoxDecoration(
-                          color: Colors.red,
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: Center(
-                          child: Text(
-                            'Course 2',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                      ),
-                      Container(
-                        width: screenwidth * 0.6,
-                        margin: EdgeInsets.symmetric(horizontal: 8),
-                        decoration: BoxDecoration(
-                          color: Colors.green,
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: Center(
-                          child: Text(
-                            'Course 3',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
+            width: screenwidth * 0.65,
+            margin: EdgeInsets.only(right: 16),
+            decoration: BoxDecoration(
+              color: Colors.blue,
+              borderRadius: BorderRadius.circular(16),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.blue.withOpacity(0.3),
+                  blurRadius: 10,
+                  offset: Offset(0, 5),
+                ),
+              ],
+            ),
+            padding: EdgeInsets.all(16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Animations in SwiftUI',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
+                SizedBox(height: 8),
+                Text(
+                  'Build and animate an iOS app from scratch',
+                  style: TextStyle(
+                    color: Colors.white70,
+                    fontSize: 14,
+                  ),
+                ),
+                SizedBox(height: 16),
+                Text(
+                  '61 SECTIONS - 11 HOURS',
+                  style: TextStyle(
+                    color: Colors.white70,
+                    fontSize: 12,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Spacer(),
+                Row(
+                  children: [
+                    CircleAvatar(
+                      backgroundImage: AssetImage('assets/ssss.jpeg'),
+                      radius: 16,
+                    ),
+                    SizedBox(width: 8),
+                    CircleAvatar(
+                      backgroundImage: AssetImage('assets/ddddd.jpeg'),
+                      radius: 16,
+                    ),
+                    SizedBox(width: 8),
+                    CircleAvatar(
+                      backgroundImage: AssetImage('assets/hhhh.jpeg'),
+                      radius: 16,
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ),
+        GestureDetector(
+          onTap: () {
+            // Interaction for the second course card
+            print("Tapped on Animations in Flutter");
+          },
+          child: Container(
+            width: screenwidth * 0.65,
+            margin: EdgeInsets.only(right: 16),
+            decoration: BoxDecoration(
+              color: Colors.red,
+              borderRadius: BorderRadius.circular(16),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.red.withOpacity(0.3),
+                  blurRadius: 10,
+                  offset: Offset(0, 5),
+                ),
+              ],
+            ),
+            padding: EdgeInsets.all(16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Animations in Flutter',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(height: 8),
+                Text(
+                  'Build and animate a cross-platform app',
+                  style: TextStyle(
+                    color: Colors.white70,
+                    fontSize: 14,
+                  ),
+                ),
+                SizedBox(height: 16),
+                Text(
+                  '45 SECTIONS - 8 HOURS',
+                  style: TextStyle(
+                    color: Colors.white70,
+                    fontSize: 12,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Spacer(),
+                Row(
+                  children: [
+                    CircleAvatar(
+                      backgroundImage: AssetImage('assets/ssss.jpeg'),
+                      radius: 16,
+                    ),
+                    SizedBox(width: 8),
+                    CircleAvatar(
+                      backgroundImage: AssetImage('assets/ddddd.jpeg'),
+                      radius: 16,
+                    ),
+                    SizedBox(width: 8),
+                    CircleAvatar(
+                      backgroundImage: AssetImage('assets/hhhh.jpeg'),
+                      radius: 16,
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ),
+        GestureDetector(
+          onTap: () {
+            // Interaction for the third course card
+            print("Tapped on UI/UX Design Principles");
+          },
+          child: Container(
+            width: screenwidth * 0.65,
+            margin: EdgeInsets.only(right: 16),
+            decoration: BoxDecoration(
+              color: Colors.green,
+              borderRadius: BorderRadius.circular(16),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.green.withOpacity(0.3),
+                  blurRadius: 10,
+                  offset: Offset(0, 5),
+                ),
+              ],
+            ),
+            padding: EdgeInsets.all(16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'UI/UX Design Principles',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(height: 8),
+                Text(
+                  'Master the fundamentals of great design',
+                  style: TextStyle(
+                    color: Colors.white70,
+                    fontSize: 14,
+                  ),
+                ),
+                SizedBox(height: 16),
+                Text(
+                  '30 SECTIONS - 6 HOURS',
+                  style: TextStyle(
+                    color: Colors.white70,
+                    fontSize: 12,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Spacer(),
+                Row(
+                  children: [
+                    CircleAvatar(
+                      backgroundImage: AssetImage('assets/ssss.jpeg'),
+                      radius: 16,
+                    ),
+                    SizedBox(width: 8),
+                    CircleAvatar(
+                      backgroundImage: AssetImage('assets/ddddd.jpeg'),
+                      radius: 16,
+                    ),
+                    SizedBox(width: 8),
+                    CircleAvatar(
+                      backgroundImage: AssetImage('assets/hhhh.jpeg'),
+                      radius: 16,
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ),
+      ],
+    ),
+  ),
+),
 
-        ),
+
          SizedBox(height: screenheight*0.03,),
-                      Padding(padding: EdgeInsets.only(left: 20),
-                child: Align(alignment: Alignment.centerLeft,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text('Internship',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.grey),),
-                       Padding(padding: EdgeInsets.only(right: 10),
-                        child: Icon(Icons.arrow_circle_right_outlined,size: 30,color: Colors.grey))
-                     // Text('more   ',style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold,color: const Color.fromARGB(255, 55, 61, 236)),)
-                    ],
-                  )),
-              ),
-               SizedBox(height: screenheight*0.03,),
+        //               Padding(padding: EdgeInsets.only(left: 20),
+        //         child: Align(alignment: Alignment.centerLeft,
+        //           child: Row(
+        //             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        //             children: [
+        //               Text('Internship',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.grey),),
+        //                Padding(padding: EdgeInsets.only(right: 10),
+        //                 child: Icon(Icons.arrow_circle_right_outlined,size: 30,color: Colors.grey))
+        //              // Text('more   ',style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold,color: const Color.fromARGB(255, 55, 61, 236)),)
+        //             ],
+        //           )),
+        //       ),
+        //        SizedBox(height: screenheight*0.03,),
         
-        Padding(padding: EdgeInsets.only(left: 20),
-          child: Container(
-                  height: screenheight * 0.22,
-                  child: ListView(
-                    scrollDirection: Axis.horizontal,
-                    children: [
-                      Container(
-                        width: screenwidth * 0.40,
-                        //margin: EdgeInsets.on(horizontal: 20),
-                        decoration: BoxDecoration(
-                          color: const Color.fromARGB(255, 228, 68, 156).withOpacity(0.8),
-                          borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10),bottomRight: Radius.circular(10),topLeft: Radius.circular(10),topRight: Radius.circular(70)),
-                        ),
-                        child: Center(
-                          child: Text(
-                            'Course 1',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                      ),
-                      Container(
-                        width: screenwidth * 0.40,
-                        margin: EdgeInsets.symmetric(horizontal: 25),
-                        decoration: BoxDecoration(
-                          color: Colors.blue.withOpacity(0.5),
-                          borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10),bottomRight: Radius.circular(10),topLeft: Radius.circular(10),topRight: Radius.circular(70)),
-                        ),
-                        child: Center(
-                          child: Text(
-                            'Course 2',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                      ),
-                      Container(
-                        width: screenwidth * 0.40,
-                        margin: EdgeInsets.symmetric(horizontal: 8),
-                        decoration: BoxDecoration(
-                          color: Colors.orange.withOpacity(0.5),
-                          borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10),bottomRight: Radius.circular(10),topLeft: Radius.circular(10),topRight: Radius.circular(70)),
-                        ),
-                        child: Center(
-                          child: Text(
-                            'Course 3',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
+        // Padding(padding: EdgeInsets.only(left: 20),
+        //   child: Container(
+        //           height: screenheight * 0.22,
+        //           child: ListView(
+        //             scrollDirection: Axis.horizontal,
+        //             children: [
+        //               Container(
+        //                 width: screenwidth * 0.40,
+        //                 //margin: EdgeInsets.on(horizontal: 20),
+        //                 decoration: BoxDecoration(
+        //                   color: const Color.fromARGB(255, 228, 68, 156).withOpacity(0.8),
+        //                   borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10),bottomRight: Radius.circular(10),topLeft: Radius.circular(10),topRight: Radius.circular(70)),
+        //                 ),
+        //                 child: Center(
+        //                   child: Text(
+        //                     'Course 1',
+        //                     style: TextStyle(
+        //                       color: Colors.white,
+        //                       fontSize: 18,
+        //                       fontWeight: FontWeight.bold,
+        //                     ),
+        //                   ),
+        //                 ),
+        //               ),
+        //               Container(
+        //                 width: screenwidth * 0.40,
+        //                 margin: EdgeInsets.symmetric(horizontal: 25),
+        //                 decoration: BoxDecoration(
+        //                   color: Colors.blue.withOpacity(0.5),
+        //                   borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10),bottomRight: Radius.circular(10),topLeft: Radius.circular(10),topRight: Radius.circular(70)),
+        //                 ),
+        //                 child: Center(
+        //                   child: Text(
+        //                     'Course 2',
+        //                     style: TextStyle(
+        //                       color: Colors.white,
+        //                       fontSize: 18,
+        //                       fontWeight: FontWeight.bold,
+        //                     ),
+        //                   ),
+        //                 ),
+        //               ),
+        //               Container(
+        //                 width: screenwidth * 0.40,
+        //                 margin: EdgeInsets.symmetric(horizontal: 8),
+        //                 decoration: BoxDecoration(
+        //                   color: Colors.orange.withOpacity(0.5),
+        //                   borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10),bottomRight: Radius.circular(10),topLeft: Radius.circular(10),topRight: Radius.circular(70)),
+        //                 ),
+        //                 child: Center(
+        //                   child: Text(
+        //                     'Course 3',
+        //                     style: TextStyle(
+        //                       color: Colors.white,
+        //                       fontSize: 18,
+        //                       fontWeight: FontWeight.bold,
+        //                     ),
+        //                   ),
+        //                 ),
+        //               ),
+        //             ],
+        //           ),
+        //         ),
+        // ),
+        Padding(
+  padding: EdgeInsets.only(left: 20),
+  child: Align(
+    alignment: Alignment.centerLeft,
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(
+          'Internship',
+          style: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+            color: Colors.grey,
+          ),
+        ),
+        Padding(
+          padding: EdgeInsets.only(right: 10),
+          child: Icon(
+            Icons.arrow_circle_right_outlined,
+            size: 30,
+            color: Colors.grey,
+          ),
+        ),
+      ],
+    ),
+  ),
+),
+SizedBox(height: screenheight * 0.03),
+Padding(
+  padding: EdgeInsets.only(left: 20),
+  child: Container(
+    height: screenheight * 0.22,
+    child: ListView(
+      scrollDirection: Axis.horizontal,
+      children: [
+        Container(
+          width: screenwidth * 0.40,
+          decoration: BoxDecoration(
+            color: const Color.fromARGB(255, 228, 68, 156).withOpacity(0.8),
+            borderRadius: BorderRadius.only(
+              bottomLeft: Radius.circular(10),
+              bottomRight: Radius.circular(10),
+              topLeft: Radius.circular(10),
+              topRight: Radius.circular(70),
+            ),
+          ),
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(
+                  Icons.android,
+                  size: 40,
+                  color: Colors.white,
+                ),
+                SizedBox(height: 10),
+                Text(
+                  'Android Development',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
+                SizedBox(height: 10),
+                Text(
+                  '525 enrolled',
+                  style: TextStyle(
+                    color: Colors.white70,
+                    fontSize: 14,
+                  ),
+                ),
+              ],
+            ),
+          ),
         ),
+        Container(
+          width: screenwidth * 0.40,
+          margin: EdgeInsets.symmetric(horizontal: 25),
+          decoration: BoxDecoration(
+            color: Colors.blue.withOpacity(0.5),
+            borderRadius: BorderRadius.only(
+              bottomLeft: Radius.circular(10),
+              bottomRight: Radius.circular(10),
+              topLeft: Radius.circular(10),
+              topRight: Radius.circular(70),
+            ),
+          ),
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(
+                  Icons.memory,
+                  size: 40,
+                  color: Colors.white,
+                ),
+                SizedBox(height: 10),
+                Text(
+                  'Artificial Intelligence',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(height: 10),
+                Text(
+                  '602 enrolled',
+                  style: TextStyle(
+                    color: Colors.white70,
+                    fontSize: 14,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+        Container(
+          width: screenwidth * 0.40,
+          margin: EdgeInsets.symmetric(horizontal: 8),
+          decoration: BoxDecoration(
+            color: Colors.orange.withOpacity(0.5),
+            borderRadius: BorderRadius.only(
+              bottomLeft: Radius.circular(10),
+              bottomRight: Radius.circular(10),
+              topLeft: Radius.circular(10),
+              topRight: Radius.circular(70),
+            ),
+          ),
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(
+                  Icons.computer,
+                  size: 40,
+                  color: Colors.white,
+                ),
+                SizedBox(height: 10),
+                Text(
+                  'Software Development',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(height: 10),
+                Text(
+                  '434 enrolled',
+                  style: TextStyle(
+                    color: Colors.white70,
+                    fontSize: 14,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ],
+    ),
+  ),
+)
+,
 
          SizedBox(height: screenheight*0.03,),
                       Padding(padding: EdgeInsets.only(left: 20),
@@ -646,28 +1024,39 @@ class _MainPageState extends State<MainPage> {
                         width: screenwidth * 0.40,
                         //margin: EdgeInsets.on(horizontal: 20),
                         decoration: BoxDecoration(
-                          color: const Color.fromARGB(255, 228, 68, 156).withOpacity(0.8),
+                          color: Colors.blue.withOpacity(0.1),
                           borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10),bottomRight: Radius.circular(10),topLeft: Radius.circular(10),topRight: Radius.circular(10)),
                         ),
                         child:Column(
                           children: [
                             Padding(
-                              padding: const EdgeInsets.only(top: 20),
-                              child: Container(
-                                height: screenheight*0.15,
-                                width: screenwidth*0.33,
-                               decoration: BoxDecoration( color: Colors.white,borderRadius: BorderRadius.circular(10)),
-                              ),
-                            ),
-                            SizedBox(height: screenheight*0.01,),
-                            Text(
-                              'Cyber Security',
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 12,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
+  padding: const EdgeInsets.only(top: 20),
+  child: Container(
+    height: screenheight * 0.15,
+    width: screenwidth * 0.33,
+    decoration: BoxDecoration(
+      color: Colors.white,
+      borderRadius: BorderRadius.circular(10),
+    ),
+    child: ClipRRect(
+      borderRadius: BorderRadius.circular(10),
+      child: Image.asset(
+        'assets/cyber1.jpeg', 
+        fit: BoxFit.cover, 
+      ),
+    ),
+  ),
+),
+SizedBox(height: screenheight * 0.01),
+Text(
+  'Cyber Security',
+  style: TextStyle(
+    color: Colors.black,
+    fontSize: 12,
+    fontWeight: FontWeight.bold,
+  ),
+),
+
                           ],
                         ),
                       ),
@@ -675,28 +1064,39 @@ class _MainPageState extends State<MainPage> {
                         width: screenwidth * 0.40,
                         margin: EdgeInsets.symmetric(horizontal: 25),
                         decoration: BoxDecoration(
-                          color: Colors.blue.withOpacity(0.5),
+                          color: Colors.blue.withOpacity(0.1),
                           borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10),bottomRight: Radius.circular(10),topLeft: Radius.circular(10),topRight: Radius.circular(10)),
                         ),
                         child:Column(
                           children: [
-                            Padding(
-                              padding: const EdgeInsets.only(top: 20),
-                              child: Container(
-                                height: screenheight*0.15,
-                                width: screenwidth*0.33,
-                               decoration: BoxDecoration( color: Colors.white,borderRadius: BorderRadius.circular(10)),
-                              ),
-                            ),
-                            SizedBox(height: screenheight*0.01,),
-                            Text(
-                              'Data Science',
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 12,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
+Padding(
+  padding: const EdgeInsets.only(top: 20),
+  child: Container(
+    height: screenheight * 0.15,
+    width: screenwidth * 0.33,
+    decoration: BoxDecoration(
+      color: Colors.white,
+      borderRadius: BorderRadius.circular(10),
+    ),
+    child: ClipRRect(
+      borderRadius: BorderRadius.circular(10),
+      child: Image.asset(
+        'assets/data_byte.jpeg', // Replace with your image path
+        fit: BoxFit.cover, // Ensures the image fits well within the container
+      ),
+    ),
+  ),
+),
+SizedBox(height: screenheight * 0.01),
+Text(
+  'Data Science',
+  style: TextStyle(
+    color: Colors.black,
+    fontSize: 12,
+    fontWeight: FontWeight.bold,
+  ),
+),
+
                           ],
                         ),
                       ),
@@ -704,28 +1104,39 @@ class _MainPageState extends State<MainPage> {
                         width: screenwidth * 0.40,
                         margin: EdgeInsets.symmetric(horizontal: 8),
                         decoration: BoxDecoration(
-                          color: Colors.orange.withOpacity(0.5),
+                          color: Colors.blue.withOpacity(0.1),
                           borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10),bottomRight: Radius.circular(10),topLeft: Radius.circular(10),topRight: Radius.circular(10)),
                         ),
                         child: Column(
                           children: [
-                            Padding(
-                              padding: const EdgeInsets.only(top: 20),
-                              child: Container(
-                                height: screenheight*0.15,
-                                width: screenwidth*0.33,
-                               decoration: BoxDecoration( color: Colors.white,borderRadius: BorderRadius.circular(10)),
-                              ),
-                            ),
-                            SizedBox(height: screenheight*0.01,),
-                            Text(
-                              'Machine Learning',
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 12,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
+Padding(
+  padding: const EdgeInsets.only(top: 20),
+  child: Container(
+    height: screenheight * 0.15,
+    width: screenwidth * 0.33,
+    decoration: BoxDecoration(
+      color: Colors.white,
+      borderRadius: BorderRadius.circular(10),
+    ),
+    child: ClipRRect(
+      borderRadius: BorderRadius.circular(10),
+      child: Image.asset(
+        'assets/ml_byte.jpeg', 
+        fit: BoxFit.cover, 
+      ),
+    ),
+  ),
+),
+SizedBox(height: screenheight * 0.01),
+Text(
+  'Machine Learning',
+  style: TextStyle(
+    color: Colors.black,
+    fontSize: 12,
+    fontWeight: FontWeight.bold,
+  ),
+),
+
                           ],
                         ),
                       ),
@@ -798,41 +1209,82 @@ class _MainPageState extends State<MainPage> {
               SizedBox(height: screenheight*0.03,),
 
 
+            // Container(
+            //   height: screenheight * 0.18,
+            //   margin: EdgeInsets.symmetric(horizontal: 10),
+            //   child: ListView.builder(
+            //     controller: _scrollController2,
+            //     scrollDirection: Axis.horizontal,
+            //     itemCount: 5,
+            //     itemBuilder: (context, index) {
+            //       return Padding(
+            //         padding: EdgeInsets.only(right: 16),
+            //         child: Container(
+            //           width: screenwidth * 0.7,
+            //           decoration: BoxDecoration(
+            //             gradient: LinearGradient(
+            //               colors: [Colors.orange, Colors.redAccent],
+            //               begin: Alignment.topLeft,
+            //               end: Alignment.bottomRight,
+            //             ),
+            //             borderRadius: BorderRadius.circular(20),
+            //           ),
+            //           child: Center(
+            //             child: Text(
+            //               'Second Item $index',
+            //               style: TextStyle(
+            //                 color: Colors.white,
+            //                 fontSize: 18,
+            //                 fontWeight: FontWeight.bold,
+            //               ),
+            //             ),
+            //           ),
+            //         ),
+            //       );
+            //     },
+            //   ),
+            // ),
             Container(
-              height: screenheight * 0.18,
-              margin: EdgeInsets.symmetric(horizontal: 10),
-              child: ListView.builder(
-                controller: _scrollController2,
-                scrollDirection: Axis.horizontal,
-                itemCount: 5,
-                itemBuilder: (context, index) {
-                  return Padding(
-                    padding: EdgeInsets.only(right: 16),
-                    child: Container(
-                      width: screenwidth * 0.7,
-                      decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                          colors: [Colors.orange, Colors.redAccent],
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
-                        ),
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      child: Center(
-                        child: Text(
-                          'Second Item $index',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
-                    ),
-                  );
-                },
-              ),
+  height: screenheight * 0.18,
+  margin: EdgeInsets.symmetric(horizontal: 10),
+  child: ListView.builder(
+    controller: _scrollController2,
+    scrollDirection: Axis.horizontal,
+    itemCount: 3, // Set this to the number of images you have
+    itemBuilder: (context, index) {
+      // Replace these with your actual image paths
+      List<String> imagePaths = [
+        'assets/R1.png',
+        'assets/R2.png',
+        'assets/R3.png',
+      ];
+
+      return Padding(
+        padding: EdgeInsets.only(right: 16),
+        child: Container(
+          width: screenwidth * 0.8,
+          
+          decoration: BoxDecoration(
+            // gradient: LinearGradient(
+            //   colors: [Colors.orange, Colors.redAccent],
+            //   begin: Alignment.topLeft,
+            //   end: Alignment.bottomRight,
+            // ),
+            borderRadius: BorderRadius.circular(20),
+          ),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(20),
+            child: Image.asset(
+              imagePaths[index],
+              fit: BoxFit.cover,
             ),
+          ),
+        ),
+      );
+    },
+  ),
+),
+
             SizedBox(height: screenheight*0.03,)
  
 
