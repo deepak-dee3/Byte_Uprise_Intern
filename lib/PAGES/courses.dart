@@ -214,71 +214,68 @@ return Scaffold(
       ),
     
                               SizedBox(height: screenheight*0.03,),
-          
-          Padding(padding: EdgeInsets.only(left: 20),
-            child: Container(
-                    height: screenheight * 0.22,
-                    child: ListView(
-                      scrollDirection: Axis.horizontal,
-                      children: [
-                        Container(
-                          width: screenwidth * 0.70,
-                          //margin: EdgeInsets.on(horizontal: 20),
-                          decoration: BoxDecoration(
-                            color: const Color.fromARGB(255, 228, 68, 156).withOpacity(0.8),
-                            borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10),bottomRight: Radius.circular(10),topLeft: Radius.circular(10),topRight: Radius.circular(10)),
-                          ),
-                          child: Center(
-                            child: Text(
-                              'Course 1',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Container(
-                          width: screenwidth * 0.70,
-                          margin: EdgeInsets.symmetric(horizontal: 25),
-                          decoration: BoxDecoration(
-                            color: Colors.blue.withOpacity(0.5),
-                            borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10),bottomRight: Radius.circular(10),topLeft: Radius.circular(10),topRight: Radius.circular(10)),
-                          ),
-                          child: Center(
-                            child: Text(
-                              'Course 2',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Container(
-                          width: screenwidth * 0.70,
-                          margin: EdgeInsets.symmetric(horizontal: 8),
-                          decoration: BoxDecoration(
-                            color: Colors.orange.withOpacity(0.5),
-                            borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10),bottomRight: Radius.circular(10),topLeft: Radius.circular(10),topRight: Radius.circular(10)),
-                          ),
-                          child: Center(
-                            child: Text(
-                              'Course 3',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
+Padding(
+  padding: EdgeInsets.only(left: 20),
+  child: Container(
+    height: screenheight * 0.22,
+    child: ListView(
+      scrollDirection: Axis.horizontal,
+      children: [
+        // Course 1
+        Container(
+          width: screenwidth * 0.70,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.all(Radius.circular(40)), // Border radius for the container
           ),
+          child: ClipRRect(
+            borderRadius: BorderRadius.all(Radius.circular(40)), // Border radius for the image
+            child: Image.asset(
+              'assets/aid.jpeg', // Replace with your image path
+              fit: BoxFit.cover,
+              width: double.infinity,
+              height: double.infinity,
+            ),
+          ),
+        ),
+        // Course 2
+        Container(
+          width: screenwidth * 0.70,
+          margin: EdgeInsets.symmetric(horizontal: 25),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.all(Radius.circular(40)), // Border radius for the container
+          ),
+          child: ClipRRect(
+            borderRadius: BorderRadius.all(Radius.circular(40)), // Border radius for the image
+            child: Image.asset(
+              'assets/rob.jpeg', // Replace with your image path
+              fit: BoxFit.cover,
+              width: double.infinity,
+              height: double.infinity,
+            ),
+          ),
+        ),
+        // Course 3
+        Container(
+          width: screenwidth * 0.75,
+          margin: EdgeInsets.symmetric(horizontal: 8),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.all(Radius.circular(40)), // Border radius for the container
+          ),
+          child: ClipRRect(
+            borderRadius: BorderRadius.all(Radius.circular(40)), // Border radius for the image
+            child: Image.asset(
+              'assets/qm.jpeg', // Replace with your image path
+              fit: BoxFit.cover,
+              width: double.infinity,
+              height: double.infinity,
+            ),
+          ),
+        ),
+      ],
+    ),
+  ),
+),
+
     
            SizedBox(height: screenheight*0.03,),
     
@@ -288,45 +285,172 @@ return Scaffold(
                 ),
                  SizedBox(height: screenheight*0.01,),
 
-                               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 10),
-                child: GridView.builder(
-                  shrinkWrap: true,
-                  physics: NeverScrollableScrollPhysics(), // Prevent scrolling here, as it's already inside SingleChildScrollView
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2, // 2 items in each row
-                    crossAxisSpacing: 10.0,
-                    mainAxisSpacing: 10.0,
-                    childAspectRatio: 1.0, // Adjust the item size (aspect ratio)
+
+Padding(
+  padding: EdgeInsets.symmetric(horizontal: 10),
+  child: ListView.builder(
+    shrinkWrap: true,
+    physics: NeverScrollableScrollPhysics(), // Prevent scrolling inside parent scroll view
+    itemCount: 6, // 6 items
+    itemBuilder: (context, index) {
+      // List of asset images
+      final imagePaths = [
+        'assets/bbb.jpeg',
+        'assets/gdd.jpeg',
+        'assets/mad.jpeg',
+        'assets/wad.jpeg',
+        'assets/iot.jpeg',
+        'assets/powb1.jpeg',
+      ];
+
+      // List of custom names for each image
+      final names = [
+        'Blockchain Technology',
+        'Game Development',
+        'Mobile App Development',
+        'Web App Development',
+        'Internet of Things',
+        'Power BI'
+      ];
+
+      return Container(
+        margin: EdgeInsets.symmetric(vertical: 10), // Add spacing between items
+        decoration: BoxDecoration(
+          
+          
+          borderRadius: BorderRadius.circular(10),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.5),
+              spreadRadius: 2,
+              blurRadius: 5,
+              offset: Offset(0, 3), // Adds a shadow effect
+            ),
+          ],
+        ),
+        child: Stack(
+          children: [
+            // Background image
+            Image.asset(
+              imagePaths[index],
+              fit: BoxFit.cover,
+              height: MediaQuery.of(context).size.height * 0.15,
+              width: double.infinity, // Takes full width of the parent
+            ),
+            // Semi-transparent overlay
+            Container(
+              height: MediaQuery.of(context).size.height * 0.15,
+              width: double.infinity,
+              color: Colors.black.withOpacity(0.5), // Adjust opacity here
+            ),
+            // Centered Text
+            Positioned(
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              child: Center(
+                child: Text(
+                  names[index], // Custom name for each image
+                  style: TextStyle(
+                    color: const Color.fromARGB(255, 183, 183, 183),
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
                   ),
-                  itemCount: 6, // 6 items
-                  itemBuilder: (context, index) {
-                    return Container(
-                       height: screenheight * 0.25, 
-                    
-                      decoration: BoxDecoration(
-                       // color: const Color.fromARGB(255, 237, 236, 236),
-                       color: const Color.fromARGB(255, 228, 242, 252),
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: Center(
-                        child: Column(
-                          children: [
-                             SizedBox(height: screenheight*0.01,),
-                            Text('Design'),
-                            SizedBox(height: screenheight*0.01,),
-                            Container(
-                              decoration: BoxDecoration(color: Colors.white,borderRadius: BorderRadius.circular(20)),
-                              height: screenheight*0.15,
-                              width: screenwidth*0.3,
-                            )
-                          ],
-                        )
-                      ),
-                    );
-                  },
                 ),
               ),
+            ),
+          ],
+        ),
+      );
+    },
+  ),
+),
+
+// Padding(
+//   padding: EdgeInsets.symmetric(horizontal: 10),
+//   child: ListView.builder(
+//     shrinkWrap: true,
+//     physics: NeverScrollableScrollPhysics(), // Prevent scrolling inside parent scroll view
+//     itemCount: 6, // 6 items
+//     itemBuilder: (context, index) {
+//       // List of asset images
+//       final imagePaths = [
+//         'assets/bbb.jpeg',
+//         'assets/gdd.jpeg',
+//         'assets/mad.jpeg',
+//         'assets/wad.jpeg',
+//         'assets/iot.jpeg',
+//         'assets/powb1.jpeg',
+//       ];
+
+//       // List of custom names for each image
+//       final names = [
+//         'Blockchain Technology',
+//         'Game Development',
+//         'Mobile App Development',
+//         'Web App Development',
+//         'Internet of Things',
+//         'Power BI'
+//       ];
+
+//       return Container(
+//         margin: EdgeInsets.symmetric(vertical: 10), // Add spacing between items
+//         decoration: BoxDecoration(
+//           borderRadius: BorderRadius.circular(40), // Apply border radius to the container
+//           boxShadow: [
+//             BoxShadow(
+//               color: Colors.grey.withOpacity(0.5),
+//               spreadRadius: 2,
+//               blurRadius: 5,
+//               offset: Offset(0, 3), // Adds a shadow effect
+//             ),
+//           ],
+//         ),
+//         child: ClipRRect(
+//           borderRadius: BorderRadius.circular(40), // Apply border radius to the image
+//           child: Stack(
+//             children: [
+//               // Background image
+//               Image.asset(
+//                 imagePaths[index],
+//                 fit: BoxFit.cover,
+//                 height: MediaQuery.of(context).size.height * 0.15,
+//                 width: double.infinity, // Takes full width of the parent
+//               ),
+//               // Semi-transparent overlay
+//               Container(
+//                 height: MediaQuery.of(context).size.height * 0.15,
+//                 width: double.infinity,
+//                 color: Colors.black.withOpacity(0.5), // Adjust opacity here
+//               ),
+//               // Centered Text
+//               Positioned(
+//                 top: 0,
+//                 left: 0,
+//                 right: 0,
+//                 bottom: 0,
+//                 child: Center(
+//                   child: Text(
+//                     names[index], // Custom name for each image
+//                     style: TextStyle(
+//                       color: const Color.fromARGB(255, 183, 183, 183),
+//                       fontSize: 18,
+//                       fontWeight: FontWeight.bold,
+//                     ),
+//                   ),
+//                 ),
+//               ),
+//             ],
+//           ),
+//         ),
+//       );
+//     },
+//   ),
+// ),
+
+
+
               SizedBox(height: screenheight * 0.03),
 
 

@@ -197,75 +197,7 @@ class _MainPageState extends State<MainPage> {
                 ),
               ),
               SizedBox(height: screenheight * 0.03),
-// Padding(
-//   padding: EdgeInsets.all(10),
-//   child: Container(
-//     height: screenheight * 0.25,
-//     margin: EdgeInsets.symmetric(horizontal: 10),
-//     child: ListView.builder(
-//       controller: _scrollController,
-//       scrollDirection: Axis.horizontal,
-//       itemCount: 5,
-//       itemBuilder: (context, index) {
-//         return Padding(
-//           padding: EdgeInsets.only(right: 16),
-//           child: Container(
-//             width: screenwidth * 0.7,
-//             decoration: BoxDecoration(
-//               gradient: LinearGradient(
-//                 colors: [Colors.blueAccent, Colors.purple],
-//                 begin: Alignment.topLeft,
-//                 end: Alignment.bottomRight,
-//               ),
-//               borderRadius: BorderRadius.circular(20),
-//             ),
-//             child: Padding(
-//               padding: EdgeInsets.all(10),
-//               child: GridView(
-//                 physics: NeverScrollableScrollPhysics(),
-//                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-//                   crossAxisCount: 2,
-//                   mainAxisSpacing: 8,
-//                   crossAxisSpacing: 8,
-//                 ),
-//                 children: [
-//                   ClipRRect(
-//                     borderRadius: BorderRadius.circular(10),
-//                     child: Image.asset(
-//                       'assets/sw1.jpeg', // First image
-//                       fit: BoxFit.cover,
-//                     ),
-//                   ),
-//                   ClipRRect(
-//                     borderRadius: BorderRadius.circular(10),
-//                     child: Image.asset(
-//                       'assets/sw2.jpeg', // Second image
-//                       fit: BoxFit.cover,
-//                     ),
-//                   ),
-//                   ClipRRect(
-//                     borderRadius: BorderRadius.circular(10),
-//                     child: Image.asset(
-//                       'assets/sw3.jpeg', // Third image
-//                       fit: BoxFit.cover,
-//                     ),
-//                   ),
-//                   ClipRRect(
-//                     borderRadius: BorderRadius.circular(10),
-//                     child: Image.asset(
-//                       'assets/sw4.jpeg', // Fourth image
-//                       fit: BoxFit.cover,
-//                     ),
-//                   ),
-//                 ],
-//               ),
-//             ),
-//           ),
-//         );
-//       },
-//     ),
-//   ),
-// ),
+
 Container(
   height: screenheight * 0.18,
   margin: EdgeInsets.symmetric(horizontal: 10),
@@ -317,6 +249,7 @@ Padding(
   ),
 ),
 SizedBox(height: screenheight * 0.03),
+
 Padding(
   padding: EdgeInsets.only(left: 20),
   child: Container(
@@ -324,6 +257,7 @@ Padding(
     child: ListView(
       scrollDirection: Axis.horizontal,
       children: [
+        // Course 1
         GestureDetector(
           onTap: () {
             // Interaction for the first course card
@@ -395,6 +329,8 @@ Padding(
             ),
           ),
         ),
+        
+        // Course 2
         GestureDetector(
           onTap: () {
             // Interaction for the second course card
@@ -466,6 +402,8 @@ Padding(
             ),
           ),
         ),
+        
+        // Course 3
         GestureDetector(
           onTap: () {
             // Interaction for the third course card
@@ -499,7 +437,7 @@ Padding(
                 ),
                 SizedBox(height: 8),
                 Text(
-                  'Master the fundamentals of great design',
+                  'Design interfaces and experiences that work',
                   style: TextStyle(
                     color: Colors.white70,
                     fontSize: 14,
@@ -537,10 +475,451 @@ Padding(
             ),
           ),
         ),
+        
+        // New Course 4
+        GestureDetector(
+          onTap: () {
+            print("Tapped on Machine Learning Basics");
+          },
+          child: Container(
+            width: screenwidth * 0.65,
+            margin: EdgeInsets.only(right: 16),
+            decoration: BoxDecoration(
+              color: Colors.orange,
+              borderRadius: BorderRadius.circular(16),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.orange.withOpacity(0.3),
+                  blurRadius: 10,
+                  offset: Offset(0, 5),
+                ),
+              ],
+            ),
+            padding: EdgeInsets.all(16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Machine Learning Basics',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(height: 8),
+                Text(
+                  'Introduction to machine learning concepts',
+                  style: TextStyle(
+                    color: Colors.white70,
+                    fontSize: 14,
+                  ),
+                ),
+                SizedBox(height: 16),
+                Text(
+                  '50 SECTIONS - 10 HOURS',
+                  style: TextStyle(
+                    color: Colors.white70,
+                    fontSize: 12,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Spacer(),
+                Row(
+                  children: [
+                    CircleAvatar(
+                      backgroundImage: AssetImage('assets/ssss.jpeg'),
+                      radius: 16,
+                    ),
+                    SizedBox(width: 8),
+                    CircleAvatar(
+                      backgroundImage: AssetImage('assets/ddddd.jpeg'),
+                      radius: 16,
+                    ),
+                    SizedBox(width: 8),
+                    CircleAvatar(
+                      backgroundImage: AssetImage('assets/hhhh.jpeg'),
+                      radius: 16,
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ),
+        
+        // New Course 5
+        GestureDetector(
+          onTap: () {
+            print("Tapped on Web Development Fundamentals");
+          },
+          child: Container(
+            width: screenwidth * 0.65,
+            margin: EdgeInsets.only(right: 16),
+            decoration: BoxDecoration(
+              color: Colors.purple,
+              borderRadius: BorderRadius.circular(16),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.purple.withOpacity(0.3),
+                  blurRadius: 10,
+                  offset: Offset(0, 5),
+                ),
+              ],
+            ),
+            padding: EdgeInsets.all(16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Web Development Fundamentals',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(height: 8),
+                Text(
+                  'Learn the basics of web development',
+                  style: TextStyle(
+                    color: Colors.white70,
+                    fontSize: 14,
+                  ),
+                ),
+                SizedBox(height: 16),
+                Text(
+                  '70 SECTIONS - 15 HOURS',
+                  style: TextStyle(
+                    color: Colors.white70,
+                    fontSize: 12,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Spacer(),
+                Row(
+                  children: [
+                    CircleAvatar(
+                      backgroundImage: AssetImage('assets/ssss.jpeg'),
+                      radius: 16,
+                    ),
+                    SizedBox(width: 8),
+                    CircleAvatar(
+                      backgroundImage: AssetImage('assets/ddddd.jpeg'),
+                      radius: 16,
+                    ),
+                    SizedBox(width: 8),
+                    CircleAvatar(
+                      backgroundImage: AssetImage('assets/hhhh.jpeg'),
+                      radius: 16,
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ),
+        
+        // New Course 6
+        GestureDetector(
+          onTap: () {
+            print("Tapped on Data Science Introduction");
+          },
+          child: Container(
+            width: screenwidth * 0.65,
+            margin: EdgeInsets.only(right: 16),
+            decoration: BoxDecoration(
+              color: Colors.yellow,
+              borderRadius: BorderRadius.circular(16),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.yellow.withOpacity(0.3),
+                  blurRadius: 10,
+                  offset: Offset(0, 5),
+                ),
+              ],
+            ),
+            padding: EdgeInsets.all(16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Data Science Introduction',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(height: 8),
+                Text(
+                  'Explore the fundamentals of data science',
+                  style: TextStyle(
+                    color: Colors.white70,
+                    fontSize: 14,
+                  ),
+                ),
+                SizedBox(height: 16),
+                Text(
+                  '60 SECTIONS - 12 HOURS',
+                  style: TextStyle(
+                    color: Colors.white70,
+                    fontSize: 12,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Spacer(),
+                Row(
+                  children: [
+                    CircleAvatar(
+                      backgroundImage: AssetImage('assets/ssss.jpeg'),
+                      radius: 16,
+                    ),
+                    SizedBox(width: 8),
+                    CircleAvatar(
+                      backgroundImage: AssetImage('assets/ddddd.jpeg'),
+                      radius: 16,
+                    ),
+                    SizedBox(width: 8),
+                    CircleAvatar(
+                      backgroundImage: AssetImage('assets/hhhh.jpeg'),
+                      radius: 16,
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ),
       ],
     ),
   ),
-),
+)
+,
+// Padding(
+//   padding: EdgeInsets.only(left: 20),
+//   child: Container(
+//     height: screenheight * 0.33,
+//     child: ListView(
+//       scrollDirection: Axis.horizontal,
+//       children: [
+//         GestureDetector(
+//           onTap: () {
+//             // Interaction for the first course card
+//             print("Tapped on Animations in SwiftUI");
+//           },
+//           child: Container(
+//             width: screenwidth * 0.65,
+//             margin: EdgeInsets.only(right: 16),
+//             decoration: BoxDecoration(
+//               color: Colors.blue,
+//               borderRadius: BorderRadius.circular(16),
+//               boxShadow: [
+//                 BoxShadow(
+//                   color: Colors.blue.withOpacity(0.3),
+//                   blurRadius: 10,
+//                   offset: Offset(0, 5),
+//                 ),
+//               ],
+//             ),
+//             padding: EdgeInsets.all(16),
+//             child: Column(
+//               crossAxisAlignment: CrossAxisAlignment.start,
+//               children: [
+//                 Text(
+//                   'Animations in SwiftUI',
+//                   style: TextStyle(
+//                     color: Colors.white,
+//                     fontSize: 18,
+//                     fontWeight: FontWeight.bold,
+//                   ),
+//                 ),
+//                 SizedBox(height: 8),
+//                 Text(
+//                   'Build and animate an iOS app from scratch',
+//                   style: TextStyle(
+//                     color: Colors.white70,
+//                     fontSize: 14,
+//                   ),
+//                 ),
+//                 SizedBox(height: 16),
+//                 Text(
+//                   '61 SECTIONS - 11 HOURS',
+//                   style: TextStyle(
+//                     color: Colors.white70,
+//                     fontSize: 12,
+//                     fontWeight: FontWeight.bold,
+//                   ),
+//                 ),
+//                 Spacer(),
+//                 Row(
+//                   children: [
+//                     CircleAvatar(
+//                       backgroundImage: AssetImage('assets/ssss.jpeg'),
+//                       radius: 16,
+//                     ),
+//                     SizedBox(width: 8),
+//                     CircleAvatar(
+//                       backgroundImage: AssetImage('assets/ddddd.jpeg'),
+//                       radius: 16,
+//                     ),
+//                     SizedBox(width: 8),
+//                     CircleAvatar(
+//                       backgroundImage: AssetImage('assets/hhhh.jpeg'),
+//                       radius: 16,
+//                     ),
+//                   ],
+//                 ),
+//               ],
+//             ),
+//           ),
+//         ),
+//         GestureDetector(
+//           onTap: () {
+//             // Interaction for the second course card
+//             print("Tapped on Animations in Flutter");
+//           },
+//           child: Container(
+//             width: screenwidth * 0.65,
+//             margin: EdgeInsets.only(right: 16),
+//             decoration: BoxDecoration(
+//               color: Colors.red,
+//               borderRadius: BorderRadius.circular(16),
+//               boxShadow: [
+//                 BoxShadow(
+//                   color: Colors.red.withOpacity(0.3),
+//                   blurRadius: 10,
+//                   offset: Offset(0, 5),
+//                 ),
+//               ],
+//             ),
+//             padding: EdgeInsets.all(16),
+//             child: Column(
+//               crossAxisAlignment: CrossAxisAlignment.start,
+//               children: [
+//                 Text(
+//                   'Animations in Flutter',
+//                   style: TextStyle(
+//                     color: Colors.white,
+//                     fontSize: 18,
+//                     fontWeight: FontWeight.bold,
+//                   ),
+//                 ),
+//                 SizedBox(height: 8),
+//                 Text(
+//                   'Build and animate a cross-platform app',
+//                   style: TextStyle(
+//                     color: Colors.white70,
+//                     fontSize: 14,
+//                   ),
+//                 ),
+//                 SizedBox(height: 16),
+//                 Text(
+//                   '45 SECTIONS - 8 HOURS',
+//                   style: TextStyle(
+//                     color: Colors.white70,
+//                     fontSize: 12,
+//                     fontWeight: FontWeight.bold,
+//                   ),
+//                 ),
+//                 Spacer(),
+//                 Row(
+//                   children: [
+//                     CircleAvatar(
+//                       backgroundImage: AssetImage('assets/ssss.jpeg'),
+//                       radius: 16,
+//                     ),
+//                     SizedBox(width: 8),
+//                     CircleAvatar(
+//                       backgroundImage: AssetImage('assets/ddddd.jpeg'),
+//                       radius: 16,
+//                     ),
+//                     SizedBox(width: 8),
+//                     CircleAvatar(
+//                       backgroundImage: AssetImage('assets/hhhh.jpeg'),
+//                       radius: 16,
+//                     ),
+//                   ],
+//                 ),
+//               ],
+//             ),
+//           ),
+//         ),
+//         GestureDetector(
+//           onTap: () {
+//             // Interaction for the third course card
+//             print("Tapped on UI/UX Design Principles");
+//           },
+//           child: Container(
+//             width: screenwidth * 0.65,
+//             margin: EdgeInsets.only(right: 16),
+//             decoration: BoxDecoration(
+//               color: Colors.green,
+//               borderRadius: BorderRadius.circular(16),
+//               boxShadow: [
+//                 BoxShadow(
+//                   color: Colors.green.withOpacity(0.3),
+//                   blurRadius: 10,
+//                   offset: Offset(0, 5),
+//                 ),
+//               ],
+//             ),
+//             padding: EdgeInsets.all(16),
+//             child: Column(
+//               crossAxisAlignment: CrossAxisAlignment.start,
+//               children: [
+//                 Text(
+//                   'UI/UX Design Principles',
+//                   style: TextStyle(
+//                     color: Colors.white,
+//                     fontSize: 18,
+//                     fontWeight: FontWeight.bold,
+//                   ),
+//                 ),
+//                 SizedBox(height: 8),
+//                 Text(
+//                   'Master the fundamentals of great design',
+//                   style: TextStyle(
+//                     color: Colors.white70,
+//                     fontSize: 14,
+//                   ),
+//                 ),
+//                 SizedBox(height: 16),
+//                 Text(
+//                   '30 SECTIONS - 6 HOURS',
+//                   style: TextStyle(
+//                     color: Colors.white70,
+//                     fontSize: 12,
+//                     fontWeight: FontWeight.bold,
+//                   ),
+//                 ),
+//                 Spacer(),
+//                 Row(
+//                   children: [
+//                     CircleAvatar(
+//                       backgroundImage: AssetImage('assets/ssss.jpeg'),
+//                       radius: 16,
+//                     ),
+//                     SizedBox(width: 8),
+//                     CircleAvatar(
+//                       backgroundImage: AssetImage('assets/ddddd.jpeg'),
+//                       radius: 16,
+//                     ),
+//                     SizedBox(width: 8),
+//                     CircleAvatar(
+//                       backgroundImage: AssetImage('assets/hhhh.jpeg'),
+//                       radius: 16,
+//                     ),
+//                   ],
+//                 ),
+//               ],
+//             ),
+//           ),
+//         ),
+//       ],
+//     ),
+//   ),
+// ),
 
 
          SizedBox(height: screenheight*0.03,),
