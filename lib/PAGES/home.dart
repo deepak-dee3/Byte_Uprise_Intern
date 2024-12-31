@@ -145,25 +145,34 @@ class _MainPageState extends State<MainPage> {
                           ],
                         ),
                       ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 20),
-                        child: CircleAvatar(
-                          radius: 25,
-                          backgroundColor: const Color.fromARGB(255, 159, 195, 245),
-                          child: ShaderMask(
-                            shaderCallback: (bounds) => LinearGradient(
-                              colors: [Colors.blue, Colors.purple],
-                              begin: Alignment.topLeft,
-                              end: Alignment.bottomRight,
-                            ).createShader(bounds),
-                            child: Icon(
-                              Icons.person,
-                              size: 30,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
-                      ),
+Padding(
+  padding: EdgeInsets.only(top: 20),
+  child: Material(
+    elevation: 6, // Slightly increased elevation for a more prominent shadow
+    shadowColor: Colors.black.withOpacity(0.8), // Subtle shadow effect
+    shape: CircleBorder(), // Ensure circular shape
+    color: Colors.transparent, // Set material background to transparent
+    child: CircleAvatar(
+      radius: 27, // Adjusted size for better visibility
+      backgroundColor: Colors.white, // White background color
+      child: ShaderMask(
+        shaderCallback: (bounds) => LinearGradient(
+          colors: [Colors.blue, Colors.purple], // Gradient effect for icon
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        ).createShader(bounds),
+        child: Center(
+          child: Icon(
+            Icons.person,
+            size: 30, // Slightly larger icon for better clarity
+            color: Colors.white, // Icon color set to white
+          ),
+        ),
+      ),
+    ),
+  ),
+)
+
                     ],
                   ),
                 ),
@@ -696,311 +705,9 @@ Padding(
   ),
 )
 ,
-// Padding(
-//   padding: EdgeInsets.only(left: 20),
-//   child: Container(
-//     height: screenheight * 0.33,
-//     child: ListView(
-//       scrollDirection: Axis.horizontal,
-//       children: [
-//         GestureDetector(
-//           onTap: () {
-//             // Interaction for the first course card
-//             print("Tapped on Animations in SwiftUI");
-//           },
-//           child: Container(
-//             width: screenwidth * 0.65,
-//             margin: EdgeInsets.only(right: 16),
-//             decoration: BoxDecoration(
-//               color: Colors.blue,
-//               borderRadius: BorderRadius.circular(16),
-//               boxShadow: [
-//                 BoxShadow(
-//                   color: Colors.blue.withOpacity(0.3),
-//                   blurRadius: 10,
-//                   offset: Offset(0, 5),
-//                 ),
-//               ],
-//             ),
-//             padding: EdgeInsets.all(16),
-//             child: Column(
-//               crossAxisAlignment: CrossAxisAlignment.start,
-//               children: [
-//                 Text(
-//                   'Animations in SwiftUI',
-//                   style: TextStyle(
-//                     color: Colors.white,
-//                     fontSize: 18,
-//                     fontWeight: FontWeight.bold,
-//                   ),
-//                 ),
-//                 SizedBox(height: 8),
-//                 Text(
-//                   'Build and animate an iOS app from scratch',
-//                   style: TextStyle(
-//                     color: Colors.white70,
-//                     fontSize: 14,
-//                   ),
-//                 ),
-//                 SizedBox(height: 16),
-//                 Text(
-//                   '61 SECTIONS - 11 HOURS',
-//                   style: TextStyle(
-//                     color: Colors.white70,
-//                     fontSize: 12,
-//                     fontWeight: FontWeight.bold,
-//                   ),
-//                 ),
-//                 Spacer(),
-//                 Row(
-//                   children: [
-//                     CircleAvatar(
-//                       backgroundImage: AssetImage('assets/ssss.jpeg'),
-//                       radius: 16,
-//                     ),
-//                     SizedBox(width: 8),
-//                     CircleAvatar(
-//                       backgroundImage: AssetImage('assets/ddddd.jpeg'),
-//                       radius: 16,
-//                     ),
-//                     SizedBox(width: 8),
-//                     CircleAvatar(
-//                       backgroundImage: AssetImage('assets/hhhh.jpeg'),
-//                       radius: 16,
-//                     ),
-//                   ],
-//                 ),
-//               ],
-//             ),
-//           ),
-//         ),
-//         GestureDetector(
-//           onTap: () {
-//             // Interaction for the second course card
-//             print("Tapped on Animations in Flutter");
-//           },
-//           child: Container(
-//             width: screenwidth * 0.65,
-//             margin: EdgeInsets.only(right: 16),
-//             decoration: BoxDecoration(
-//               color: Colors.red,
-//               borderRadius: BorderRadius.circular(16),
-//               boxShadow: [
-//                 BoxShadow(
-//                   color: Colors.red.withOpacity(0.3),
-//                   blurRadius: 10,
-//                   offset: Offset(0, 5),
-//                 ),
-//               ],
-//             ),
-//             padding: EdgeInsets.all(16),
-//             child: Column(
-//               crossAxisAlignment: CrossAxisAlignment.start,
-//               children: [
-//                 Text(
-//                   'Animations in Flutter',
-//                   style: TextStyle(
-//                     color: Colors.white,
-//                     fontSize: 18,
-//                     fontWeight: FontWeight.bold,
-//                   ),
-//                 ),
-//                 SizedBox(height: 8),
-//                 Text(
-//                   'Build and animate a cross-platform app',
-//                   style: TextStyle(
-//                     color: Colors.white70,
-//                     fontSize: 14,
-//                   ),
-//                 ),
-//                 SizedBox(height: 16),
-//                 Text(
-//                   '45 SECTIONS - 8 HOURS',
-//                   style: TextStyle(
-//                     color: Colors.white70,
-//                     fontSize: 12,
-//                     fontWeight: FontWeight.bold,
-//                   ),
-//                 ),
-//                 Spacer(),
-//                 Row(
-//                   children: [
-//                     CircleAvatar(
-//                       backgroundImage: AssetImage('assets/ssss.jpeg'),
-//                       radius: 16,
-//                     ),
-//                     SizedBox(width: 8),
-//                     CircleAvatar(
-//                       backgroundImage: AssetImage('assets/ddddd.jpeg'),
-//                       radius: 16,
-//                     ),
-//                     SizedBox(width: 8),
-//                     CircleAvatar(
-//                       backgroundImage: AssetImage('assets/hhhh.jpeg'),
-//                       radius: 16,
-//                     ),
-//                   ],
-//                 ),
-//               ],
-//             ),
-//           ),
-//         ),
-//         GestureDetector(
-//           onTap: () {
-//             // Interaction for the third course card
-//             print("Tapped on UI/UX Design Principles");
-//           },
-//           child: Container(
-//             width: screenwidth * 0.65,
-//             margin: EdgeInsets.only(right: 16),
-//             decoration: BoxDecoration(
-//               color: Colors.green,
-//               borderRadius: BorderRadius.circular(16),
-//               boxShadow: [
-//                 BoxShadow(
-//                   color: Colors.green.withOpacity(0.3),
-//                   blurRadius: 10,
-//                   offset: Offset(0, 5),
-//                 ),
-//               ],
-//             ),
-//             padding: EdgeInsets.all(16),
-//             child: Column(
-//               crossAxisAlignment: CrossAxisAlignment.start,
-//               children: [
-//                 Text(
-//                   'UI/UX Design Principles',
-//                   style: TextStyle(
-//                     color: Colors.white,
-//                     fontSize: 18,
-//                     fontWeight: FontWeight.bold,
-//                   ),
-//                 ),
-//                 SizedBox(height: 8),
-//                 Text(
-//                   'Master the fundamentals of great design',
-//                   style: TextStyle(
-//                     color: Colors.white70,
-//                     fontSize: 14,
-//                   ),
-//                 ),
-//                 SizedBox(height: 16),
-//                 Text(
-//                   '30 SECTIONS - 6 HOURS',
-//                   style: TextStyle(
-//                     color: Colors.white70,
-//                     fontSize: 12,
-//                     fontWeight: FontWeight.bold,
-//                   ),
-//                 ),
-//                 Spacer(),
-//                 Row(
-//                   children: [
-//                     CircleAvatar(
-//                       backgroundImage: AssetImage('assets/ssss.jpeg'),
-//                       radius: 16,
-//                     ),
-//                     SizedBox(width: 8),
-//                     CircleAvatar(
-//                       backgroundImage: AssetImage('assets/ddddd.jpeg'),
-//                       radius: 16,
-//                     ),
-//                     SizedBox(width: 8),
-//                     CircleAvatar(
-//                       backgroundImage: AssetImage('assets/hhhh.jpeg'),
-//                       radius: 16,
-//                     ),
-//                   ],
-//                 ),
-//               ],
-//             ),
-//           ),
-//         ),
-//       ],
-//     ),
-//   ),
-// ),
-
 
          SizedBox(height: screenheight*0.03,),
-        //               Padding(padding: EdgeInsets.only(left: 20),
-        //         child: Align(alignment: Alignment.centerLeft,
-        //           child: Row(
-        //             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        //             children: [
-        //               Text('Internship',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.grey),),
-        //                Padding(padding: EdgeInsets.only(right: 10),
-        //                 child: Icon(Icons.arrow_circle_right_outlined,size: 30,color: Colors.grey))
-        //              // Text('more   ',style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold,color: const Color.fromARGB(255, 55, 61, 236)),)
-        //             ],
-        //           )),
-        //       ),
-        //        SizedBox(height: screenheight*0.03,),
-        
-        // Padding(padding: EdgeInsets.only(left: 20),
-        //   child: Container(
-        //           height: screenheight * 0.22,
-        //           child: ListView(
-        //             scrollDirection: Axis.horizontal,
-        //             children: [
-        //               Container(
-        //                 width: screenwidth * 0.40,
-        //                 //margin: EdgeInsets.on(horizontal: 20),
-        //                 decoration: BoxDecoration(
-        //                   color: const Color.fromARGB(255, 228, 68, 156).withOpacity(0.8),
-        //                   borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10),bottomRight: Radius.circular(10),topLeft: Radius.circular(10),topRight: Radius.circular(70)),
-        //                 ),
-        //                 child: Center(
-        //                   child: Text(
-        //                     'Course 1',
-        //                     style: TextStyle(
-        //                       color: Colors.white,
-        //                       fontSize: 18,
-        //                       fontWeight: FontWeight.bold,
-        //                     ),
-        //                   ),
-        //                 ),
-        //               ),
-        //               Container(
-        //                 width: screenwidth * 0.40,
-        //                 margin: EdgeInsets.symmetric(horizontal: 25),
-        //                 decoration: BoxDecoration(
-        //                   color: Colors.blue.withOpacity(0.5),
-        //                   borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10),bottomRight: Radius.circular(10),topLeft: Radius.circular(10),topRight: Radius.circular(70)),
-        //                 ),
-        //                 child: Center(
-        //                   child: Text(
-        //                     'Course 2',
-        //                     style: TextStyle(
-        //                       color: Colors.white,
-        //                       fontSize: 18,
-        //                       fontWeight: FontWeight.bold,
-        //                     ),
-        //                   ),
-        //                 ),
-        //               ),
-        //               Container(
-        //                 width: screenwidth * 0.40,
-        //                 margin: EdgeInsets.symmetric(horizontal: 8),
-        //                 decoration: BoxDecoration(
-        //                   color: Colors.orange.withOpacity(0.5),
-        //                   borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10),bottomRight: Radius.circular(10),topLeft: Radius.circular(10),topRight: Radius.circular(70)),
-        //                 ),
-        //                 child: Center(
-        //                   child: Text(
-        //                     'Course 3',
-        //                     style: TextStyle(
-        //                       color: Colors.white,
-        //                       fontSize: 18,
-        //                       fontWeight: FontWeight.bold,
-        //                     ),
-        //                   ),
-        //                 ),
-        //               ),
-        //             ],
-        //           ),
-        //         ),
-        // ),
+
         Padding(
   padding: EdgeInsets.only(left: 20),
   child: Align(
