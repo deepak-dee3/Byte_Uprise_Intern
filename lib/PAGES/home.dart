@@ -1,4 +1,15 @@
 import 'dart:async';
+import 'package:byte_uprise/PAGES/Home_Internship/ai.dart';
+import 'package:byte_uprise/PAGES/Home_Internship/android_dev.dart';
+import 'package:byte_uprise/PAGES/Home_Internship/software_dev.dart';
+import 'package:byte_uprise/PAGES/Home_TDR.dart/Domain.dart';
+import 'package:byte_uprise/PAGES/Home_TDR.dart/Reviews.dart';
+import 'package:byte_uprise/PAGES/Home_TDR.dart/top_courses.dart';
+import 'package:byte_uprise/PAGES/Home_ci.dart/courses.dart';
+import 'package:byte_uprise/PAGES/Home_ci.dart/internship.dart';
+import 'package:byte_uprise/PAGES/Home_recent_projects/cyber.dart';
+import 'package:byte_uprise/PAGES/Home_recent_projects/ds.dart';
+import 'package:byte_uprise/PAGES/Home_recent_projects/ml.dart';
 import 'package:flutter/material.dart';
 
 
@@ -743,131 +754,148 @@ Padding(
     child: ListView(
       scrollDirection: Axis.horizontal,
       children: [
-        Container(
-          width: screenwidth * 0.40,
-          decoration: BoxDecoration(
-            color: const Color.fromARGB(255, 228, 68, 156).withOpacity(0.8),
-            borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(10),
-              bottomRight: Radius.circular(10),
-              topLeft: Radius.circular(10),
-              topRight: Radius.circular(70),
+        GestureDetector(
+          onTap: ()
+          {
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>AndroidPage()));
+          },
+          child: Container(
+            width: screenwidth * 0.40,
+            decoration: BoxDecoration(
+              color: const Color.fromARGB(255, 228, 68, 156).withOpacity(0.8),
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(10),
+                bottomRight: Radius.circular(10),
+                topLeft: Radius.circular(10),
+                topRight: Radius.circular(70),
+              ),
             ),
-          ),
-          child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(
-                  Icons.android,
-                  size: 40,
-                  color: Colors.white,
-                ),
-                SizedBox(height: 10),
-                Text(
-                  'Android Development',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
+            child: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    Icons.android,
+                    size: 40,
                     color: Colors.white,
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
                   ),
-                ),
-                SizedBox(height: 10),
-                Text(
-                  '525 enrolled',
-                  style: TextStyle(
-                    color: Colors.white70,
-                    fontSize: 14,
+                  SizedBox(height: 10),
+                  Text(
+                    'Android Development',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
-                ),
-              ],
+                  SizedBox(height: 10),
+                  Text(
+                    '525 enrolled',
+                    style: TextStyle(
+                      color: Colors.white70,
+                      fontSize: 14,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ),
-        Container(
-          width: screenwidth * 0.40,
-          margin: EdgeInsets.symmetric(horizontal: 25),
-          decoration: BoxDecoration(
-            color: Colors.blue.withOpacity(0.5),
-            borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(10),
-              bottomRight: Radius.circular(10),
-              topLeft: Radius.circular(10),
-              topRight: Radius.circular(70),
+        GestureDetector(
+          onTap: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>AiPage()));
+          },
+          child: Container(
+            width: screenwidth * 0.40,
+            margin: EdgeInsets.symmetric(horizontal: 25),
+            decoration: BoxDecoration(
+              color: Colors.blue.withOpacity(0.5),
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(10),
+                bottomRight: Radius.circular(10),
+                topLeft: Radius.circular(10),
+                topRight: Radius.circular(70),
+              ),
             ),
-          ),
-          child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(
-                  Icons.memory,
-                  size: 40,
-                  color: Colors.white,
-                ),
-                SizedBox(height: 10),
-                Text(
-                  'Artificial Intelligence',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
+            child: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    Icons.memory,
+                    size: 40,
                     color: Colors.white,
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
                   ),
-                ),
-                SizedBox(height: 10),
-                Text(
-                  '602 enrolled',
-                  style: TextStyle(
-                    color: Colors.white70,
-                    fontSize: 14,
+                  SizedBox(height: 10),
+                  Text(
+                    'Artificial Intelligence',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
-                ),
-              ],
+                  SizedBox(height: 10),
+                  Text(
+                    '602 enrolled',
+                    style: TextStyle(
+                      color: Colors.white70,
+                      fontSize: 14,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ),
-        Container(
-          width: screenwidth * 0.40,
-          margin: EdgeInsets.symmetric(horizontal: 8),
-          decoration: BoxDecoration(
-            color: Colors.orange.withOpacity(0.5),
-            borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(10),
-              bottomRight: Radius.circular(10),
-              topLeft: Radius.circular(10),
-              topRight: Radius.circular(70),
+        GestureDetector(
+          onTap: ()
+          {
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>SoftwareDevelopmentPage()));
+          },
+          child: Container(
+            width: screenwidth * 0.40,
+            margin: EdgeInsets.symmetric(horizontal: 8),
+            decoration: BoxDecoration(
+              color: Colors.orange.withOpacity(0.5),
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(10),
+                bottomRight: Radius.circular(10),
+                topLeft: Radius.circular(10),
+                topRight: Radius.circular(70),
+              ),
             ),
-          ),
-          child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(
-                  Icons.computer,
-                  size: 40,
-                  color: Colors.white,
-                ),
-                SizedBox(height: 10),
-                Text(
-                  'Software Development',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
+            child: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    Icons.computer,
+                    size: 40,
                     color: Colors.white,
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
                   ),
-                ),
-                SizedBox(height: 10),
-                Text(
-                  '434 enrolled',
-                  style: TextStyle(
-                    color: Colors.white70,
-                    fontSize: 14,
+                  SizedBox(height: 10),
+                  Text(
+                    'Software Development',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
-                ),
-              ],
+                  SizedBox(height: 10),
+                  Text(
+                    '434 enrolled',
+                    style: TextStyle(
+                      color: Colors.white70,
+                      fontSize: 14,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ),
@@ -1035,54 +1063,64 @@ Padding(
                  
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Container(
-                      height: screenheight*0.2,
-                      width: screenwidth*0.40,
-                      decoration: BoxDecoration( boxShadow: [
-      BoxShadow(
-        color: Colors.black.withOpacity(0.3), 
-        spreadRadius: 2, 
-        blurRadius: 8,
-        offset: Offset(0, 4), 
-      ),
-    ],
-                        borderRadius: BorderRadius.circular(10),color: Colors.white,),
-                      child: Center(
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(Icons.notes,size: 35,color: Colors.red,),
-                              SizedBox(height: screenheight*0.02,),
-                            Text('Courses',style: TextStyle(fontWeight: FontWeight.bold),),
+                    GestureDetector(
+                       onTap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>CoursesPage()));
+                      },
+                      child: Container(
+                        height: screenheight*0.2,
+                        width: screenwidth*0.40,
+                        decoration: BoxDecoration( boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withOpacity(0.3), 
+                              spreadRadius: 2, 
+                              blurRadius: 8,
+                              offset: Offset(0, 4), 
+                            ),
                           ],
+                          borderRadius: BorderRadius.circular(10),color: Colors.white,),
+                        child: Center(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(Icons.notes,size: 35,color: Colors.red,),
+                                SizedBox(height: screenheight*0.02,),
+                              Text('Courses',style: TextStyle(fontWeight: FontWeight.bold),),
+                            ],
+                          ),
                         ),
                       ),
                     ),
                    
-                     Container(
-                      height: screenheight*0.2,
-                      width: screenwidth*0.40,
-                      decoration: BoxDecoration(
-                         boxShadow: [
-      BoxShadow(
-        color: Colors.black.withOpacity(0.3), 
-        spreadRadius: 2, 
-        blurRadius: 8,
-        offset: Offset(0, 4), 
-      ),
-    ],
-                        borderRadius: BorderRadius.circular(10),color: Colors.white,),
-                       child: Center(
-                         child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(Icons.library_add,size: 35,color: Colors.blue,),
-                            SizedBox(height: screenheight*0.02,),
-                            Text('Internship',style: TextStyle(fontWeight: FontWeight.bold),),
-                          ],
-                                               ),
-                       ),
-                    ),
+                     GestureDetector(
+                       onTap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>InternshipsPage()));
+                      },
+                       child: Container(
+                        height: screenheight*0.2,
+                        width: screenwidth*0.40,
+                        decoration: BoxDecoration(
+                           boxShadow: [
+                             BoxShadow(
+                               color: Colors.black.withOpacity(0.3), 
+                               spreadRadius: 2, 
+                               blurRadius: 8,
+                               offset: Offset(0, 4), 
+                             ),
+                           ],
+                          borderRadius: BorderRadius.circular(10),color: Colors.white,),
+                         child: Center(
+                           child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(Icons.library_add,size: 35,color: Colors.blue,),
+                              SizedBox(height: screenheight*0.02,),
+                              Text('Internship',style: TextStyle(fontWeight: FontWeight.bold),),
+                            ],
+                                                 ),
+                         ),
+                                           ),
+                     ),
                   ],
                 ),
               ),
@@ -1106,124 +1144,139 @@ Padding(
                   child: ListView(
                     scrollDirection: Axis.horizontal,
                     children: [
-                      Container(
-                        width: screenwidth * 0.40,
-                        //margin: EdgeInsets.on(horizontal: 20),
-                        decoration: BoxDecoration(
-                          color: Colors.blue.withOpacity(0.1),
-                          borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10),bottomRight: Radius.circular(10),topLeft: Radius.circular(10),topRight: Radius.circular(10)),
+                      GestureDetector(
+                         onTap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>CyberSecurityPage()));
+                      },
+                        child: Container(
+                          width: screenwidth * 0.40,
+                          //margin: EdgeInsets.on(horizontal: 20),
+                          decoration: BoxDecoration(
+                            color: Colors.blue.withOpacity(0.1),
+                            borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10),bottomRight: Radius.circular(10),topLeft: Radius.circular(10),topRight: Radius.circular(10)),
+                          ),
+                          child:Column(
+                            children: [
+                              Padding(
+                          padding: const EdgeInsets.only(top: 20),
+                          child: Container(
+                            height: screenheight * 0.15,
+                            width: screenwidth * 0.33,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(10),
+                              child: Image.asset(
+                                'assets/cyber1.jpeg', 
+                                fit: BoxFit.cover, 
+                              ),
+                            ),
+                          ),
                         ),
-                        child:Column(
-                          children: [
-                            Padding(
-  padding: const EdgeInsets.only(top: 20),
-  child: Container(
-    height: screenheight * 0.15,
-    width: screenwidth * 0.33,
-    decoration: BoxDecoration(
-      color: Colors.white,
-      borderRadius: BorderRadius.circular(10),
-    ),
-    child: ClipRRect(
-      borderRadius: BorderRadius.circular(10),
-      child: Image.asset(
-        'assets/cyber1.jpeg', 
-        fit: BoxFit.cover, 
-      ),
-    ),
-  ),
-),
-SizedBox(height: screenheight * 0.01),
-Text(
-  'Cyber Security',
-  style: TextStyle(
-    color: Colors.black,
-    fontSize: 12,
-    fontWeight: FontWeight.bold,
-  ),
-),
-
-                          ],
+                        SizedBox(height: screenheight * 0.01),
+                        Text(
+                          'Cyber Security',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 12,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
-                      ),
-                      Container(
-                        width: screenwidth * 0.40,
-                        margin: EdgeInsets.symmetric(horizontal: 25),
-                        decoration: BoxDecoration(
-                          color: Colors.blue.withOpacity(0.1),
-                          borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10),bottomRight: Radius.circular(10),topLeft: Radius.circular(10),topRight: Radius.circular(10)),
-                        ),
-                        child:Column(
-                          children: [
-Padding(
-  padding: const EdgeInsets.only(top: 20),
-  child: Container(
-    height: screenheight * 0.15,
-    width: screenwidth * 0.33,
-    decoration: BoxDecoration(
-      color: Colors.white,
-      borderRadius: BorderRadius.circular(10),
-    ),
-    child: ClipRRect(
-      borderRadius: BorderRadius.circular(10),
-      child: Image.asset(
-        'assets/data_byte.jpeg', // Replace with your image path
-        fit: BoxFit.cover, // Ensures the image fits well within the container
-      ),
-    ),
-  ),
-),
-SizedBox(height: screenheight * 0.01),
-Text(
-  'Data Science',
-  style: TextStyle(
-    color: Colors.black,
-    fontSize: 12,
-    fontWeight: FontWeight.bold,
-  ),
-),
-
-                          ],
+                        
+                            ],
+                          ),
                         ),
                       ),
-                      Container(
-                        width: screenwidth * 0.40,
-                        margin: EdgeInsets.symmetric(horizontal: 8),
-                        decoration: BoxDecoration(
-                          color: Colors.blue.withOpacity(0.1),
-                          borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10),bottomRight: Radius.circular(10),topLeft: Radius.circular(10),topRight: Radius.circular(10)),
+                      GestureDetector(
+                         onTap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>DataSciencePage()));
+                      },
+                        child: Container(
+                          width: screenwidth * 0.40,
+                          margin: EdgeInsets.symmetric(horizontal: 25),
+                          decoration: BoxDecoration(
+                            color: Colors.blue.withOpacity(0.1),
+                            borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10),bottomRight: Radius.circular(10),topLeft: Radius.circular(10),topRight: Radius.circular(10)),
+                          ),
+                          child:Column(
+                            children: [
+                        Padding(
+                          padding: const EdgeInsets.only(top: 20),
+                          child: Container(
+                            height: screenheight * 0.15,
+                            width: screenwidth * 0.33,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(10),
+                              child: Image.asset(
+                                'assets/data_byte.jpeg', // Replace with your image path
+                                fit: BoxFit.cover, // Ensures the image fits well within the container
+                              ),
+                            ),
+                          ),
                         ),
-                        child: Column(
-                          children: [
-Padding(
-  padding: const EdgeInsets.only(top: 20),
-  child: Container(
-    height: screenheight * 0.15,
-    width: screenwidth * 0.33,
-    decoration: BoxDecoration(
-      color: Colors.white,
-      borderRadius: BorderRadius.circular(10),
-    ),
-    child: ClipRRect(
-      borderRadius: BorderRadius.circular(10),
-      child: Image.asset(
-        'assets/ml_byte.jpeg', 
-        fit: BoxFit.cover, 
-      ),
-    ),
-  ),
-),
-SizedBox(height: screenheight * 0.01),
-Text(
-  'Machine Learning',
-  style: TextStyle(
-    color: Colors.black,
-    fontSize: 12,
-    fontWeight: FontWeight.bold,
-  ),
-),
-
-                          ],
+                        SizedBox(height: screenheight * 0.01),
+                        Text(
+                          'Data Science',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 12,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        
+                            ],
+                          ),
+                        ),
+                      ),
+                      GestureDetector(
+                         onTap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>MachineLearningPage()));
+                      },
+                        child: Container(
+                          width: screenwidth * 0.40,
+                          margin: EdgeInsets.symmetric(horizontal: 8),
+                          decoration: BoxDecoration(
+                            color: Colors.blue.withOpacity(0.1),
+                            borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10),bottomRight: Radius.circular(10),topLeft: Radius.circular(10),topRight: Radius.circular(10)),
+                          ),
+                          child: Column(
+                            children: [
+                        Padding(
+                          padding: const EdgeInsets.only(top: 20),
+                          child: Container(
+                            height: screenheight * 0.15,
+                            width: screenwidth * 0.33,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(10),
+                              child: Image.asset(
+                                'assets/ml_byte.jpeg', 
+                                fit: BoxFit.cover, 
+                              ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(height: screenheight * 0.01),
+                        Text(
+                          'Machine Learning',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 12,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        
+                            ],
+                          ),
                         ),
                       ),
                     ],
@@ -1240,52 +1293,71 @@ Text(
                  
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Container(
-                      height: screenheight*0.15,
-                      width: screenwidth*0.28,
-                      decoration: BoxDecoration(borderRadius: BorderRadius.circular(10),color: Colors.white,),
-                      child: Center(
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(Icons.golf_course,size: 35,color: Colors.red,),
-                              SizedBox(height: screenheight*0.02,),
-                            Text('Top Courses',style: TextStyle(fontWeight: FontWeight.bold),),
-                          ],
+                    GestureDetector(
+                      onTap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>TopCoursesPage()));
+                      },
+                      child: Container(
+                        height: screenheight*0.15,
+                        width: screenwidth*0.28,
+                        decoration: BoxDecoration(borderRadius: BorderRadius.circular(10),color: Colors.white,),
+                        child: Center(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(Icons.golf_course,size: 35,color: Colors.red,),
+                                SizedBox(height: screenheight*0.02,),
+                              Text('Top Courses',style: TextStyle(fontWeight: FontWeight.bold),),
+                            ],
+                          ),
                         ),
                       ),
                     ),
                    
-                     Container(
-                      height: screenheight*0.15,
-                      width: screenwidth*0.28,
-                      decoration: BoxDecoration(borderRadius: BorderRadius.circular(10),color: Colors.white,),
-                       child: Center(
-                         child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(Icons.domain,size: 35,color: Colors.green,),
-                            SizedBox(height: screenheight*0.02,),
-                            Text('Domain',style: TextStyle(fontWeight: FontWeight.bold),),
-                          ],
-                                               ),
-                       ),
-                    ),
+                     GestureDetector(
+                      onTap:()
+                      {
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=> TechDomainPage()));
 
-                    Container(
-                      height: screenheight*0.15,
-                      width: screenwidth*0.28,
-                      decoration: BoxDecoration(borderRadius: BorderRadius.circular(10),color: Colors.white,),
-                       child: Center(
-                         child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(Icons.reviews,size: 35,color: Colors.amber,),
-                            SizedBox(height: screenheight*0.02,),
-                            Text('Reviews',style: TextStyle(fontWeight: FontWeight.bold),),
-                          ],
-                                               ),
-                       ),
+                      },
+                       child: Container(
+                        height: screenheight*0.15,
+                        width: screenwidth*0.28,
+                        decoration: BoxDecoration(borderRadius: BorderRadius.circular(10),color: Colors.white,),
+                         child: Center(
+                           child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(Icons.domain,size: 35,color: Colors.green,),
+                              SizedBox(height: screenheight*0.02,),
+                              Text('Domain',style: TextStyle(fontWeight: FontWeight.bold),),
+                            ],
+                                                 ),
+                         ),
+                                           ),
+                     ),
+
+                    GestureDetector(
+                      onTap:()
+                      {
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=> ReviewsPage()));
+
+                      },
+                      child: Container(
+                        height: screenheight*0.15,
+                        width: screenwidth*0.28,
+                        decoration: BoxDecoration(borderRadius: BorderRadius.circular(10),color: Colors.white,),
+                         child: Center(
+                           child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(Icons.reviews,size: 35,color: Colors.amber,),
+                              SizedBox(height: screenheight*0.02,),
+                              Text('Reviews',style: TextStyle(fontWeight: FontWeight.bold),),
+                            ],
+                                                 ),
+                         ),
+                      ),
                     ),
                   ],
                 ),
