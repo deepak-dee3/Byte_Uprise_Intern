@@ -40,39 +40,7 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
     return Scaffold(
       body: _pages[_currentIndex], 
      
-//       bottomNavigationBar:  BottomNavigationBar(
-//         currentIndex: _currentIndex,
-//         onTap: (index) {
-//           setState(() {
-//             _currentIndex = index; 
-//           });
-//         },
-//   items: const <BottomNavigationBarItem>[
-//     BottomNavigationBarItem(
-//       icon: Icon(Icons.home, color: Colors.black, size: 25),
-//       label: 'Home',
-//     ),
-//     BottomNavigationBarItem(
-//       icon: Icon(Icons.menu_book_outlined, color: Colors.black, size: 25),
-//       label: 'Courses',
-//     ),
-//     BottomNavigationBarItem(
-//       icon: Icon(Icons.search_outlined, color: Colors.black, size: 25),
-//       label: 'Search',
-//     ),
-//     BottomNavigationBarItem(
-//       icon: Icon(Icons.account_circle, color: Colors.black, size: 25),
-//       label: 'Profile',
-     
-//     ),
-//   ],
-//   showSelectedLabels: true, 
-//   showUnselectedLabels: true,
-//    selectedItemColor: Colors.purple, 
-//   unselectedItemColor: Colors.grey, 
-//   selectedLabelStyle: TextStyle(fontSize: 14, color: Colors.purple), 
-//   unselectedLabelStyle: TextStyle(fontSize: 12, color: Colors.grey),
-// ),
+
 bottomNavigationBar: BottomNavigationBar(
   currentIndex: _currentIndex,
   onTap: (index) {

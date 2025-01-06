@@ -69,7 +69,7 @@ return Scaffold(
                           padding: EdgeInsets.only(top: 20),
                           child: CircleAvatar(
                             radius: 25,
-                            backgroundColor: const Color.fromARGB(255, 159, 195, 245),
+                            backgroundColor: Colors.white,
                             child: ShaderMask(
                               shaderCallback: (bounds) => LinearGradient(
                                 colors: [Colors.blue, Colors.purple],
