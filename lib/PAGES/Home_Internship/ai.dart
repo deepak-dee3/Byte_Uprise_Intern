@@ -84,7 +84,7 @@ class _AiPageState extends State<AiPage> {
                 [
                   'Definition and applications of AI',
                   'History and evolution of AI',
-                  'Key domains of AI: Machine Learning, NLP, Computer Vision, etc.',
+                  'Key domains of AI: Machine Learning, NLP, Computer Vision , etc.',
                 ],
               ),
               SizedBox(height: screenheight * 0.03),
