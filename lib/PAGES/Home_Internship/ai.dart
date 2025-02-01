@@ -169,8 +169,7 @@ class _AiPageState extends State<AiPage> {
                 [
                   'Building recommendation systems',
                   'AI-powered chatbots',
-                  'Speech recognition and synthesis',
-                ],
+                  'Speech recognition and synthesis', ],
               ),
               SizedBox(height: screenheight * 0.03),
               buildSubSection(
