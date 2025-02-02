@@ -21,7 +21,7 @@ class TechDomainPage extends StatelessWidget {
       ),
       body: ListView(
         children: [
-          _buildSourceSection('Machine Learning (ML) Websites', [
+          _buildSourceSection('Machine Learning (ML) Websites ', [
             'TensorFlow (tensorflow.org)',
             'Kaggle (kaggle.com) - for datasets and ML competitions',
             'Scikit-learn (scikit-learn.org)',
