@@ -27,7 +27,7 @@ class TopCoursesPage extends StatelessWidget {
             'Udemy',
             'Pluralsight',
           ], Colors.blue.shade50),
-          _buildSourceSection('Official Certification Websites', [
+          _buildSourceSection('Official Certification Website', [
             'Google Certifications (e.g., Google Career Certificates)',
             'Microsoft Learn',
             'AWS Training and Certification',
