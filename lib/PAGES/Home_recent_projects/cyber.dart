@@ -110,7 +110,4 @@ class CyberSecurityPage extends StatelessWidget {
             ],
           ),
         ),
-      ),
-    );
-  }
-}
+      ),);}}
