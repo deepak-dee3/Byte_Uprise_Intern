@@ -50,7 +50,7 @@ class CyberSecurityPage extends StatelessWidget {
               ),
               SizedBox(height: screenheight * 0.02),
 
-              // Project Description
+              // Project Descripti
               Text(
                 'In this project, we developed a system to detect phishing emails using machine learning. Phishing is a fraudulent attempt to obtain sensitive information by disguising as a trustworthy entity.',
                 style: TextStyle(fontSize: 16),
