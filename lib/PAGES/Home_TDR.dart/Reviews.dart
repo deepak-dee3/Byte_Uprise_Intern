@@ -78,8 +78,4 @@ class ReviewsPage extends StatelessWidget {
                   .toList(),
             ),
           ],
-        ),
-      ),
-    );
-  }
-}
+        ),),);}}
