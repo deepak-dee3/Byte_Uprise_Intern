@@ -56,7 +56,7 @@ class ReviewsPage extends StatelessWidget {
               offset: Offset(4, 4),
             ),
           ],
-        ),
+),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
