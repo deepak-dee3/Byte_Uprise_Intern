@@ -38,9 +38,7 @@ class ReviewsPage extends StatelessWidget {
               'Reddit subreddits like r/learnprogramming or r/coursera.',
             ], Colors.purple.shade50),
           ],
-        ),
-      );
-      }
+        ),);}
 
   Widget _buildSourceSection(String title, List<String> sources, Color containerColor) {
     return Padding(
