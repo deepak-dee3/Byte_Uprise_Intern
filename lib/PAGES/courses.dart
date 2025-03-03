@@ -13,7 +13,6 @@ class _CoursesState extends State<Courses> {
 
 
 
-
   @override
   Widget build(BuildContext context) {
     var screenheight = MediaQuery.of(context).size.height;
