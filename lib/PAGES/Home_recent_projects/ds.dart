@@ -26,7 +26,6 @@ class DataSciencePage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              
               Container(
                 height: screenheight * 0.25,
                 decoration: BoxDecoration(
