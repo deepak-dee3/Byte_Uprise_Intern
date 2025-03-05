@@ -17,8 +17,7 @@ class _AndroidPageState extends State<AndroidPage> {
         toolbarHeight: screenheight*0.25,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.only(bottomLeft: Radius.circular(25),bottomRight: Radius.circular(25))),
         title: Text('Android Development',style: TextStyle(fontSize: 20,color: Colors.white, fontWeight: FontWeight.bold),),
-        backgroundColor: Colors.teal,
-      ),
+        backgroundColor: Colors.teal, ),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
