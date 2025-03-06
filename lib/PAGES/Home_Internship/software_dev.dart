@@ -24,7 +24,7 @@ class _SoftwareDevelopmentPageState extends State<SoftwareDevelopmentPage> {
           style: TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),
         ),
         backgroundColor: Colors.blue,
-      ),
+),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
