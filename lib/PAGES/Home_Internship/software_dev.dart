@@ -40,11 +40,9 @@ class _SoftwareDevelopmentPageState extends State<SoftwareDevelopmentPage> {
                       borderRadius: BorderRadius.circular(25),
                       image: DecorationImage(
                         image: AssetImage(
-                            'assets/soft.jpeg'), // Replace with actual image URL
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                  ),
+                            'assets/soft.jpeg'),
+                        fit: BoxFit.cover
+ ,),), ),
                   Positioned(
                     bottom: 20,
                     left: 11,
