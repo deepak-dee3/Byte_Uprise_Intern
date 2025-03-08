@@ -62,8 +62,7 @@ class _SoftwareDevelopmentPageState extends State<SoftwareDevelopmentPage> {
                       ),
                     ),
                   ),
-                ],
-              ),
+                ],),
               SizedBox(height: screenheight * 0.05),
 
               // Beginner Level
