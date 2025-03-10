@@ -39,7 +39,6 @@ class ReviewsPage extends StatelessWidget {
             ], Colors.purple.shade50),
           ],
         ),);}
-
   Widget _buildSourceSection(String title, List<String> sources, Color containerColor) {
     return Padding(
      padding: EdgeInsets.all(16),
