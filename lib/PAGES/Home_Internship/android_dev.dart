@@ -24,7 +24,7 @@ class _AndroidPageState extends State<AndroidPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Header Image with Title Overlay
+             
               Stack(
                 children: [
                   Container(
