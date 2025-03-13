@@ -106,8 +106,7 @@ class _AiPageState extends State<AiPage> {
                 ],
               ),
               SizedBox(height: screenheight * 0.05),
-
-              // Intermediate Level
+  // Intermediate Level
               Text(
                 'Intermediate Level',
                 style: TextStyle(
