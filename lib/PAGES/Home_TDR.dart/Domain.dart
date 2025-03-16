@@ -49,8 +49,7 @@ class TechDomainPage extends StatelessWidget {
             'Cloudera (cloudera.com)',
           ], Colors.teal.shade50),
         ],
-      ),
-    );
+      ),);
   }
 
   Widget _buildSourceSection(String title, List<String> sources, Color containerColor) {
