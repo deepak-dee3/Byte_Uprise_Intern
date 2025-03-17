@@ -20,10 +20,10 @@ class TechDomainPage extends StatelessWidget {
         backgroundColor: Colors.teal,
       ),
       body: ListView(
-        children: [
+       children: [
           _buildSourceSection('Machine Learning (ML) Websites ', [
             'TensorFlow (tensorflow.org)',
-            'Kaggle (kaggle.com) - for datasets and ML competitions',
+          'Kaggle (kaggle.com) - for datasets and ML competitions',
             'Scikit-learn (scikit-learn.org)',
             'Towards Data Science (towardsdatascience.com)',
           ], Colors.blue.shade50),
