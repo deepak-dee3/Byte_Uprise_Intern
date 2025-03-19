@@ -31,8 +31,7 @@ class TechDomainPage extends StatelessWidget {
             'DataCamp (datacamp.com)',
             'Coursera (coursera.org) - Data Science specializations',
             'edX (edx.org) - Data Science programs from universities',
-            'KDnuggets (kdnuggets.com) - News and articles for Data Science',
-          ], Colors.green.shade50),
+            'KDnuggets (kdnuggets.com) - News and articles for Data Science',   ], Colors.green.shade50),
           _buildSourceSection('Artificial Intelligence (AI) Websites', [
             'OpenAI (openai.com)',
             'DeepMind (deepmind.com)',
