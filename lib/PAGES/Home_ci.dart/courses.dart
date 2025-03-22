@@ -45,7 +45,6 @@ class CoursesPage extends StatelessWidget {
                 subtitle: Text('Click to know more'),
                 trailing: Icon(Icons.arrow_forward_ios),
                 onTap: () {
-                  // Navigate to detailed page if needed
                 },
               ),
             );
