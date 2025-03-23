@@ -47,7 +47,7 @@ class CoursesPage extends StatelessWidget {
                 onTap: () {
                 },
               ),
-            );
+);
           },
         ),
       ),
