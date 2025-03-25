@@ -33,7 +33,7 @@ class TopCoursesPage extends StatelessWidget {
             'AWS Training and Certification',
           ], Colors.green.shade50),
           _buildSourceSection('Course Review Websites', [
-            'Class Central',
+       'Class Central',
             'Course Report',
           ], Colors.orange.shade50),
         ],
