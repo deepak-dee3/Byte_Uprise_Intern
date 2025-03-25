@@ -30,7 +30,7 @@ class ProfilePage extends StatelessWidget {
         children: [
 
           SizedBox(height:screenheight*0.03 ,),
-          
+     
           Center(
   child: Stack(
     alignment: Alignment.center,
