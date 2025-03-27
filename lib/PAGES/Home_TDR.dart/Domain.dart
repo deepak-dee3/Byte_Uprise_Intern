@@ -88,7 +88,7 @@ class TechDomainPage extends StatelessWidget {
                       ))
                   .toList(),
             ),
-          ],
+],
         ),
       ),
     );
